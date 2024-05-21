@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    
+</head>
+<body>
+    <h1>THIS IS THE USERS PAGE</h1>
+    {% for person in users%}
+        <ul>
+            
+            <li>First Name: {{person.fname}}</li>
+            <li>Last Name: {{person.lname}}</li>
+            <li>Email: {{person.email}}</li>   
+    
+        </ul>  
+    {% endfor %}  
+</body>
+</html>
