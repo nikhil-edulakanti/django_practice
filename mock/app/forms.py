@@ -1,13 +1,14 @@
 from django import forms
 from django.core import validators
+from app.models import user_input
 
 
-def check_x(value):
-    if value[0].lower!="x":
-        raise forms.ValidationError("start with x")
 
-class User(forms.Form):
-    name=forms.CharField(validators=[check_x])
+class User(forms.ModelForm):
+    name=forms.CharField(validators=[validators.MaxLengthValidator(20)])
     email=forms.EmailField()
-    verif_email=forms.EmailField(label="enter email again")
     text=forms.CharField(widget=forms.Textarea)
+    
+    class Meta:
+        model=user_input
+        fields="__all__"

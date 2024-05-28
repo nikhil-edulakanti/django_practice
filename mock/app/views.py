@@ -18,6 +18,7 @@ def user_view(request):
         form=User(request.POST)
 
         if form.is_valid():
+            form.save()
             print("VALIDATION SUCCES")
             print("1:" + form.cleaned_data["name"])
             print("2:" + form.cleaned_data["email"])
